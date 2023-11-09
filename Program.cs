@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -26,7 +25,6 @@ namespace Exam02
         {
             Hashtable studentHashtable = new Hashtable();
 
-            int option = 0;
             int StudID, StudAge;
             string StudName, StudGender, StudClass;
 
@@ -42,24 +40,24 @@ namespace Exam02
                 Console.WriteLine("====================================");
 
                 Console.Write("Option: ");
-                option = Convert.ToInt32(Console.ReadLine());
+                int option = Convert.ToInt32(Console.ReadLine());
                 Student student = new Student();
 
 
                 switch (option)
                 {
                     case 1:
-
+                        Console.WriteLine(); 
                         Console.WriteLine("1. Insert new student: ");
-                        Console.WriteLine("ID: ");
+                        Console.Write("ID: ");
                         student.StudID = Convert.ToInt32(Console.ReadLine());
-                        Console.WriteLine("Name: ");
+                        Console.Write("Name: ");
                         student.StudName = Console.ReadLine();
-                        Console.WriteLine("Gender: ");
+                        Console.Write("Gender: ");
                         student.StudGender = Console.ReadLine();
-                        Console.WriteLine("Age: ");
+                        Console.Write("Age: ");
                         student.StudAge = Convert.ToInt32(Console.ReadLine());
-                        Console.WriteLine("Class: ");
+                        Console.Write("Class: ");
                         student.StudClass = Console.ReadLine();
 
                         Console.WriteLine("Enter 3 marks:");
@@ -75,6 +73,7 @@ namespace Exam02
 
                         break;
                     case 2:
+                        Console.WriteLine();
                         Console.WriteLine("2. Display student list: ");
                         foreach (DictionaryEntry entry in studentHashtable)
                         {
@@ -85,6 +84,7 @@ namespace Exam02
 
                         break;
                     case 3:
+                        Console.WriteLine();
                         Console.WriteLine("3. Calculate average mark: ");
                         foreach (DictionaryEntry entry in studentHashtable)
                         {
@@ -95,6 +95,7 @@ namespace Exam02
                         }
                         break;
                     case 4:
+                        Console.WriteLine();
                         Console.WriteLine("Search student: ");
                         Console.WriteLine("Please select an option to search:");
                         Console.WriteLine("1. By ID");
@@ -106,8 +107,7 @@ namespace Exam02
                         switch (choice)
                         {
                             case 1:
-
-
+                                Console.WriteLine();
                                 Console.Write("Enter ID: ");
                                 int searchID = Convert.ToInt32(Console.ReadLine());
                                 ArrayList searchResults = new ArrayList();
@@ -136,7 +136,7 @@ namespace Exam02
 
                                 break;
                             case 2:
-
+                                Console.WriteLine();
                                 Console.Write("Enter name to search: ");
                                 string searchName = Console.ReadLine();
 
@@ -165,7 +165,7 @@ namespace Exam02
                                 }
                                 break;
                             case 3:
-
+                                Console.WriteLine();
                                 Console.Write("Enter class to search: ");
                                 string searchClass = Console.ReadLine();
 
@@ -199,13 +199,13 @@ namespace Exam02
                         }
                         break;
                     case 5:
-                        Console.WriteLine("Exit the program...");
+                        Console.WriteLine();
+                        Console.WriteLine("Exit the program");
                         return;
                     default:
-                        Console.WriteLine("Invalid choice. Please try again.");
+                        Console.WriteLine("Invalid choice. Retry.");
                         break;
                 }
-                Console.WriteLine();
                 Console.WriteLine("Press anything to clear.");
                 Console.ReadLine();
                 Console.Clear();
